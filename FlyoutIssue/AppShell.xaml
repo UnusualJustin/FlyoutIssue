@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FlyoutIssue.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FlyoutIssue"
+    Title="FlyoutIssue"
+    FlyoutIsPresented="{Binding IsFlyoutOpen}"
+    Shell.FlyoutBackdrop="#CCCCCCCC"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.ForegroundColor="SteelBlue">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <Shell.FlyoutContent>
+        <VerticalStackLayout Background="#888888">
+            <Border
+                Margin="10"
+                Padding="20"
+                Background="Tan">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer />
+                </Border.GestureRecognizers>
+                <Label Text="Click me (closes automatically on iOS, but not Android or Windows)" />
+            </Border>
+            <Border
+                Margin="10"
+                Padding="20"
+                Background="Tan">
+                <Label Text="Click Me (nothing happens on any platform)" />
+            </Border>
+        </VerticalStackLayout>
+    </Shell.FlyoutContent>
+
+</Shell>
